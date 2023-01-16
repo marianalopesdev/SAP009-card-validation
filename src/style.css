@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    font-size: 62.5%;
+/*   
+    --hue: 520;
+  
+    --primary-color: hsl(var(--hue), 41%, 47%);
+    --second-color-light: hsl(293, 41%, 92%);
+    --headline: hsl(210, 11%, 15%);
+    --paragraph: hsl(210, 9%, 31%);
+    --brand-beige: hsl(39, 100%, 97%);
+    --brand-light: hsl(calc(var(--hue) - 1), 41%, 92%);
+    --brand-light-2: hsl(calc(var(--hue) - 1), 40%, 96%);
+    --brand-hover: hsl(var(--hue), 41%, 28%); */
+  
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  html,
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;
+  }
+
+.creditCard {
+height: 30rem;
+width: 50rem;
+background-color: pink;
+}
