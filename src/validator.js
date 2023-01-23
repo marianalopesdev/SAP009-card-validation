@@ -26,7 +26,7 @@ export function validateCard(e) {
   const cardNumberArray = cardNumber.split("");
   //console.log(cardNumberArray);
   const reverseCardNumber = cardNumberArray.reverse();
-  // console.log(reverseCardNumber);
+  //  console.log(reverseCardNumber);
   checkCardNUmber(reverseCardNumber);
 
   // console.log(reverseCardNumber);
@@ -39,30 +39,43 @@ export function validateCard(e) {
 }
 
 export function checkCardNUmber(reverseCardNumber) {
+  let totalSum = 0;
+  let oddNumber = 0;
+
   for (let i = 0; i < reverseCardNumber.length; i++) {
     if (i % 2 === 0) {
       console.log("hi");
 
-     
       const sumEvenPositionNumber = reverseCardNumber[i] * 2;
-      //FALTA VERIFICAR SE TEM DOIS DIGITOS
-      //SE SIM SOMAR E DEPOIS SOMAR NA SOMA TOTAL
-      //SE NAO SÓ SOMAR NA SOMA TOTAL
-      
-      //console.log(sumEvenPositionNumber);
+      console.log("sumEvenPositionNumber");
+      console.log(sumEvenPositionNumber);
       const sumEvenPositionNumberArray = [];
       sumEvenPositionNumberArray.push(sumEvenPositionNumber);
-      //console.log(cardNumberArray);
-      const splitEvenPositionNumber = sumEvenPositionNumberArray.toString().split("");
-      // console.log(splitNumber);
-      const evenPositionNumberArray = splitEvenPositionNumber.map(Number);
-      const sumEvenPositionNumberSplited = evenPositionNumberArray[0] + evenPositionNumberArray[1];
-      console.log(evenPositionNumberArray); // Output: [1, 2, 3, 4, 5]
-      console.log(sumEvenPositionNumberSplited);
+      console.log("sumevenpositionARRAY");
+      console.log(sumEvenPositionNumberArray);
+      const splitEvenPositionNumber = sumEvenPositionNumberArray
+        .toString()
+        .split("");
+      console.log("SPLITPOSITIONNUMVER");
+      console.log(splitEvenPositionNumber);
 
-    
+      const evenPositionNumberArray = splitEvenPositionNumber.map(Number);
+      console.log("evenposARRAY");
+      console.log(evenPositionNumberArray);
+      const sumEvenPositionNumberSplited =
+        evenPositionNumberArray[0] + evenPositionNumberArray[1];
+      //   console.log(evenPositionNumberArray); // Output: [1, 2, 3, 4, 5]
+      console.log("soma numeros splited");
+      console.log(sumEvenPositionNumberSplited);
+      totalSum = totalSum + sumEvenPositionNumberSplited;
+      console.log(totalSum);
     } else {
       console.log("bye");
+      oddNumber = reverseCardNumber[i];
+      console.log("odd" + oddNumber);
+      console.log("total" + totalSum);
+      totalSum = totalSum + parseInt(oddNumber);
+      console.log(totalSum);
     }
 
     console.log(i + " posicao");
