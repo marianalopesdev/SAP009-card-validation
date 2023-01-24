@@ -20,66 +20,50 @@ export function handleKeyPressJustNumbers(e) {
 
 export function validateCard(e) {
   e.preventDefault();
-  const cardNumber = document.getElementById("cardNumber").value;
-  //console.log(cardNumber);
+  const cardNumber = document.getElementById("cardNumber").value; 
   // const isValidLabel = document.getElementById("isValidLabel");
   const cardNumberArray = cardNumber.split("");
-  //console.log(cardNumberArray);
-  const reverseCardNumber = cardNumberArray.reverse();
-  //  console.log(reverseCardNumber);
+  const reverseCardNumber = cardNumberArray.map(Number).reverse();
+
   checkCardNUmber(reverseCardNumber);
-
-  // console.log(reverseCardNumber);
-  // Step 3. Use the join() method to join all elements of the array into a string
-  // var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
-  // // "olleh"
-
-  // //Step 4. Return the reversed string
-  // return joinArray; // "olleh"
 }
 
+//PROBLEMA: NUMERO MENOR QUE 5 NA POSICAO PAR
+
 export function checkCardNUmber(reverseCardNumber) {
+ 
   let totalSum = 0;
   let oddNumber = 0;
 
   for (let i = 0; i < reverseCardNumber.length; i++) {
     if (i % 2 === 0) {
-      console.log("hi");
-
-      const sumEvenPositionNumber = reverseCardNumber[i] * 2;
-      console.log("sumEvenPositionNumber");
-      console.log(sumEvenPositionNumber);
+      console.log("posição par: " + i + " número: " + reverseCardNumber[i]);
+      const evenPositionNumberMultiplied = reverseCardNumber[i] * 2;
+      console.log("Número ímpar multiplicado: " + evenPositionNumberMultiplied);
       const sumEvenPositionNumberArray = [];
-      sumEvenPositionNumberArray.push(sumEvenPositionNumber);
-      console.log("sumevenpositionARRAY");
-      console.log(sumEvenPositionNumberArray);
+      sumEvenPositionNumberArray.push(evenPositionNumberMultiplied);
       const splitEvenPositionNumber = sumEvenPositionNumberArray
         .toString()
-        .split("");
-      console.log("SPLITPOSITIONNUMVER");
-      console.log(splitEvenPositionNumber);
-
-      const evenPositionNumberArray = splitEvenPositionNumber.map(Number);
-      console.log("evenposARRAY");
-      console.log(evenPositionNumberArray);
+        .split("").map(Number);      
       const sumEvenPositionNumberSplited =
-        evenPositionNumberArray[0] + evenPositionNumberArray[1];
-      //   console.log(evenPositionNumberArray); // Output: [1, 2, 3, 4, 5]
-      console.log("soma numeros splited");
-      console.log(sumEvenPositionNumberSplited);
+      splitEvenPositionNumber[0] + splitEvenPositionNumber[1];
+      
+      console.log("soma numeros separados: " + sumEvenPositionNumberSplited);
       totalSum = totalSum + sumEvenPositionNumberSplited;
-      console.log(totalSum);
-    } else {
-      console.log("bye");
+      console.log("total dentro do if: " + totalSum);
+    } 
+    else {
+      
       oddNumber = reverseCardNumber[i];
-      console.log("odd" + oddNumber);
-      console.log("total" + totalSum);
+      console.log("posição ímpar: " + i +" número da posição ímpar: " + oddNumber);
+  
       totalSum = totalSum + parseInt(oddNumber);
-      console.log(totalSum);
+      console.log("total dentro do else: " + totalSum);
     }
 
-    console.log(i + " posicao");
+    console.log("repeticao, a soma pode ser aqui");
   }
+  console.log("console log do fim");
 }
 
 export default validator;
