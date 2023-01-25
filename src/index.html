@@ -35,22 +35,24 @@
             </div>
           </div>
         </div>
-      
 
-      <div class="formCardNumber">
-        <form> 
-          <p>Type the card number: </p>
-          <input type="text" id="cardNumber" />
-          <input
-            type="submit"
-            id="searchButton"
-            value="Send"
-            onclick="validateCard(event)"
-          />
-          <!-- <label id="labelText"></label> -->
-          <label for="" id="isValidLabel"></label>
-        </form>
-      </div>
+        <div class="formCardNumber">
+          <form>
+            <p>Type the card number:</p>
+            <input type="text" id="cardNumber" maxlength="16" />
+            <input
+              type="submit"
+              id="sendButton"
+              value="Send"
+              onclick="validateCard(event)"
+            />
+            <!-- <label id="labelText"></label> -->
+          </form>
+        </div>
+        <div class="isValid">
+          <label for="" id="maskedCardNumber"></label>
+          <label for="" id="isValid"></label>
+        </div>
       </div>
     </main>
     <footer></footer>
