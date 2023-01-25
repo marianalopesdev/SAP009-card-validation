@@ -3,12 +3,10 @@ const validator = {
 };
 
 const input = document.getElementById("cardNumber");
-const labelText = document.getElementById("labelText");
+const isValidLabel = document.getElementById("labelText");
 
 input.addEventListener("keypress", handleKeyPressJustNumbers);
-// input.addEventListener("input", function () {
-//   labelText.innerHTML = input.value;
-// });
+
 
 export function handleKeyPressJustNumbers(e) {
   const key = e.charCode || e.keyCode;
@@ -24,7 +22,7 @@ export function validateCard(e) {
   const cardNumber = document.getElementById("cardNumber").value;
 
   if (cardNumber !== "") {
-    // const isValidLabel = document.getElementById("isValidLabel");
+    
     const cardNumberArray = cardNumber.split("");
     const reverseCardNumber = cardNumberArray.map(Number).reverse();
     checkCardNUmber(reverseCardNumber);
@@ -36,8 +34,7 @@ export function validateCard(e) {
 
 export function checkCardNUmber(reverseCardNumber) {
   let totalSum = 0;
-  let oddNumber = 0;
-
+  
   for (let i = 0; i < reverseCardNumber.length; i++) {
     if ((i+1) % 2 === 0) {
       const evenPositionNumberMultiplied = reverseCardNumber[i] * 2;
@@ -48,18 +45,11 @@ export function checkCardNUmber(reverseCardNumber) {
         totalSum = totalSum + evenPositionNumberMultiplied;
       } 
       else {
-        const evenPositionNumberSplitted = evenPositionNumberMultipliedArray
-          .toString()
-          .split("")
-          .map(Number);
-        const sumEvenPositionNumberSplitted =
-          evenPositionNumberSplitted[0] + evenPositionNumberSplitted[1];
-    totalSum = totalSum + sumEvenPositionNumberSplitted;
+        totalSum += (evenPositionNumberMultiplied - 9);
       }
     } 
     else {
-      oddNumber = reverseCardNumber[i];
-      totalSum = totalSum + parseInt(oddNumber);
+      totalSum += parseInt(reverseCardNumber[i]);
     }
   }
   
