@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -57,3 +58,64 @@
     <script src="index.js" type="module"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Card Validator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Card Validator</h1>
+      <h3>Is your card valid? Check our free tool!</h3>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="creditCard">
+          <div class="creditCardText">
+            <div class="bankName">Ursal | Bank</div>
+            <div class="bankLogo">
+              <img src="./assets/mastercard_logo.png" />
+            </div>
+          </div>
+          <div class="userData">
+            <div class="cardNumber">
+              ####&nbsp&nbsp&nbsp####&nbsp&nbsp&nbsp####&nbsp&nbsp&nbsp####&nbsp&nbsp&nbsp2023
+            </div>
+            <div class="nameDate">
+              <div class="userName">LUIZ INÁCIO L D SILVA</div>
+              <div class="expirationDate">12/30</div>
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="formCardNumber">
+        <form> 
+          <p>Type the card number: </p>
+          <input type="text" id="cardNumber" />
+          <input
+            type="submit"
+            id="searchButton"
+            value="Send"
+            onclick="validateCard(event)"
+          />
+          <!-- <label id="labelText"></label> -->
+          <label for="" id="isValidLabel"></label>
+        </form>
+      </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+>>>>>>> f869675f04790759ecbce10e8cbaf75d1b7a6cf9

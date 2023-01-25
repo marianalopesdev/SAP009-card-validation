@@ -48,14 +48,13 @@ export function checkCardNUmber(reverseCardNumber) {
         totalSum = totalSum + evenPositionNumberMultiplied;
       } 
       else {
-        // const evenPositionNumberSplitted = evenPositionNumberMultipliedArray
-        //   .toString()
-        //   .split("")
-        //   .map(Number);
-        // const sumEvenPositionNumberSplitted =
-        //   evenPositionNumberSplitted[0] + evenPositionNumberSplitted[1];
-        const evenSum = evenPositionNumberMultiplied - 9;
-        totalSum += evenSum;
+        const evenPositionNumberSplitted = evenPositionNumberMultipliedArray
+          .toString()
+          .split("")
+          .map(Number);
+        const sumEvenPositionNumberSplitted =
+          evenPositionNumberSplitted[0] + evenPositionNumberSplitted[1];
+    totalSum = totalSum + sumEvenPositionNumberSplitted;
       }
     } 
     else {
