@@ -6,9 +6,9 @@ const input = document.getElementById("cardNumber");
 const labelText = document.getElementById("labelText");
 
 input.addEventListener("keypress", handleKeyPressJustNumbers);
-input.addEventListener("input", function () {
-  labelText.innerHTML = input.value;
-});
+// input.addEventListener("input", function () {
+//   labelText.innerHTML = input.value;
+// });
 
 export function handleKeyPressJustNumbers(e) {
   const key = e.charCode || e.keyCode;
@@ -20,22 +20,18 @@ export function handleKeyPressJustNumbers(e) {
 
 export function validateCard(e) {
   e.preventDefault();
+
   const cardNumber = document.getElementById("cardNumber").value;
-  //console.log(cardNumber);
-  // const isValidLabel = document.getElementById("isValidLabel");
-  const cardNumberArray = cardNumber.split("");
-  //console.log(cardNumberArray);
-  const reverseCardNumber = cardNumberArray.reverse();
-  //  console.log(reverseCardNumber);
-  checkCardNUmber(reverseCardNumber);
 
-  // console.log(reverseCardNumber);
-  // Step 3. Use the join() method to join all elements of the array into a string
-  // var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
-  // // "olleh"
-
-  // //Step 4. Return the reversed string
-  // return joinArray; // "olleh"
+  if (cardNumber !== "") {
+    // const isValidLabel = document.getElementById("isValidLabel");
+    const cardNumberArray = cardNumber.split("");
+    const reverseCardNumber = cardNumberArray.map(Number).reverse();
+    checkCardNUmber(reverseCardNumber);
+  } 
+  else {
+    alert("Type the card number");
+  }
 }
 
 export function checkCardNUmber(reverseCardNumber) {
@@ -43,43 +39,37 @@ export function checkCardNUmber(reverseCardNumber) {
   let oddNumber = 0;
 
   for (let i = 0; i < reverseCardNumber.length; i++) {
-    if (i % 2 === 0) {
-      console.log("hi");
+    if ((i+1) % 2 === 0) {
+      const evenPositionNumberMultiplied = reverseCardNumber[i] * 2;
+      const evenPositionNumberMultipliedArray = [];
+      evenPositionNumberMultipliedArray.push(evenPositionNumberMultiplied);
 
-      const sumEvenPositionNumber = reverseCardNumber[i] * 2;
-      console.log("sumEvenPositionNumber");
-      console.log(sumEvenPositionNumber);
-      const sumEvenPositionNumberArray = [];
-      sumEvenPositionNumberArray.push(sumEvenPositionNumber);
-      console.log("sumevenpositionARRAY");
-      console.log(sumEvenPositionNumberArray);
-      const splitEvenPositionNumber = sumEvenPositionNumberArray
-        .toString()
-        .split("");
-      console.log("SPLITPOSITIONNUMVER");
-      console.log(splitEvenPositionNumber);
-
-      const evenPositionNumberArray = splitEvenPositionNumber.map(Number);
-      console.log("evenposARRAY");
-      console.log(evenPositionNumberArray);
-      const sumEvenPositionNumberSplited =
-        evenPositionNumberArray[0] + evenPositionNumberArray[1];
-      //   console.log(evenPositionNumberArray); // Output: [1, 2, 3, 4, 5]
-      console.log("soma numeros splited");
-      console.log(sumEvenPositionNumberSplited);
-      totalSum = totalSum + sumEvenPositionNumberSplited;
-      console.log(totalSum);
-    } else {
-      console.log("bye");
+      if (evenPositionNumberMultipliedArray.toString().length === 1) {
+        totalSum = totalSum + evenPositionNumberMultiplied;
+      } 
+      else {
+        // const evenPositionNumberSplitted = evenPositionNumberMultipliedArray
+        //   .toString()
+        //   .split("")
+        //   .map(Number);
+        // const sumEvenPositionNumberSplitted =
+        //   evenPositionNumberSplitted[0] + evenPositionNumberSplitted[1];
+        const evenSum = evenPositionNumberMultiplied - 9;
+        totalSum += evenSum;
+      }
+    } 
+    else {
       oddNumber = reverseCardNumber[i];
-      console.log("odd" + oddNumber);
-      console.log("total" + totalSum);
       totalSum = totalSum + parseInt(oddNumber);
-      console.log(totalSum);
     }
-
-    console.log(i + " posicao");
   }
+  
+  if (totalSum % 10 === 0) {
+    alert("cartão válido");
+  } else {
+    alert("cartão inválido");
+  }
+  
 }
 
 export default validator;
