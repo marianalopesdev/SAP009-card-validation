@@ -1,34 +1,36 @@
 const isValidLabel = document.getElementById("isValidLabel");
-//const maskedCardNumberLabel = document.getElementById("maskedCardNumber");
+const maskedCardNumberLabel = document.getElementById("maskedCardNumber");
 const cardNumberInput = document.getElementById("cardNumber");
 
 export function validateCard(e) {
   e.preventDefault();
 
   const cardNumber = cardNumberInput.value;
-  console.log("cardnumber");
-  // console.log(cardNumber);
+
   if (cardNumber !== "") {
     const cardNumberArray = cardNumber.split("").map(Number);
-  
-    const reverseCardNumber = cardNumberArray.reverse();
-    
-    const bol = validator.isValid(reverseCardNumber);
 
-    if (bol === true) {
+    const reverseCardNumber = cardNumberArray.reverse();
+
+    const validateCardResult = validator.isValid(reverseCardNumber);
+
+    const maskedNumber = validator.maskify(cardNumber);
+
+    maskedCardNumberLabel.innerHTML = maskedNumber;
+
+    if (validateCardResult === true) {
       isValidLabel.innerHTML = "CARTAO VÁLIDO";
+    } else {
+      isValidLabel.innerHTML = "CARTAO INVÁLIDO";
     }
-    validator.maskify(cardNumber);
-  } else {
-    isValidLabel.innerHTML = "CARTAO INVÁLIDO";
+  }   
+  else {
     alert("Type the card number");
   }
 }
 
 const validator = {
   isValid: function isValid(reverseCardNumber) {
-    // ...do something here
-
     let totalSum = 0;
     //alert("entrou");
     for (let i = 0; i < reverseCardNumber.length; i++) {
@@ -50,37 +52,25 @@ const validator = {
         totalSum += parseInt(reverseCardNumber[i]);
       }
     }
-
-    // const cardNumber = cardNumberInput.value;
-    // const maskedValue = "#".repeat(12) + cardNumber.substr(12);
-
-    // maskedCardNumberLabel.innerHTML = maskedValue;
-
     if (totalSum % 10 === 0) {
-      console.log(`valido`);
-
       return true;
     } else {
       return false;
     }
   },
-  maskify: function maskify(cardNumber) {
-    //     // const maskedValue = cardNumber.slice(0,16).concat("####");
-    // console.log(cardNumberArray);
 
+  maskify: function maskify(cardNumber) {
     const originalString = cardNumber;
     let maskedString = null;
     if (cardNumber.length > 4) {
-      return maskedString =
-        "#".repeat(originalString.length - 4) + originalString.substr(-4);
+      return (maskedString =
+        "#".repeat(originalString.length - 4) + originalString.substr(-4));
       //console.log(maskedString);
     } else {
       maskedString = cardNumber;
       return maskedString;
       //console.log(maskedString);
     }
-    //     maskedCardNumberLabel.innerHTML = maskedValue;
-    // document.getElementById("cardNumber").value = "";
   },
 };
 export default validator;
