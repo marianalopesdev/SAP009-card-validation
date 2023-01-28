@@ -12,6 +12,10 @@
     "start": "serve ./src",
     "deploy": "gh-pages -d src"
   },
+  "jest":{
+    "testEnvironment": "jsdom"
+}
+,
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
