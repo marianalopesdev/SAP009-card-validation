@@ -9,11 +9,8 @@ export function validateCard(e) {
 
   if (cardNumber !== "") {
     const cardNumberArray = cardNumber.split("").map(Number);
-
     const reverseCardNumber = cardNumberArray.reverse();
-
     const validateCardResult = validator.isValid(reverseCardNumber);
-
     const maskedNumber = validator.maskify(cardNumber);
 
     maskedCardNumberLabel.innerHTML = maskedNumber;
@@ -22,7 +19,7 @@ export function validateCard(e) {
       isValidLabel.innerHTML = "CARTAO VÁLIDO";
     } else {
       isValidLabel.innerHTML = "CARTAO INVÁLIDO";
-    }
+    }    
   }   
   else {
     alert("Type the card number");
@@ -35,19 +32,13 @@ const validator = {
     //alert("entrou");
     for (let i = 0; i < reverseCardNumber.length; i++) {
       if ((i + 1) % 2 === 0) {
-        //refatorar com IF perguntando se o número multiplicado é maior que 10
-        // se sim -9 e somatotal
-        //se nao soma total
-
+        
         const evenPositionNumberMultiplied = reverseCardNumber[i] * 2;
-        const evenPositionNumberMultipliedArray = [];
-        evenPositionNumberMultipliedArray.push(evenPositionNumberMultiplied);
-
-        if (evenPositionNumberMultipliedArray.toString().length === 1) {
-          totalSum = totalSum + evenPositionNumberMultiplied;
+      
+        if (evenPositionNumberMultiplied < 10) {
+          totalSum += evenPositionNumberMultiplied;
         } else {
-          totalSum += evenPositionNumberMultiplied - 9;
-        }
+          totalSum += (evenPositionNumberMultiplied - 9);        }
       } else {
         totalSum += parseInt(reverseCardNumber[i]);
       }
@@ -65,11 +56,9 @@ const validator = {
     if (cardNumber.length > 4) {
       return (maskedString =
         "#".repeat(originalString.length - 4) + originalString.substr(-4));
-      //console.log(maskedString);
     } else {
       maskedString = cardNumber;
       return maskedString;
-      //console.log(maskedString);
     }
   },
 };
