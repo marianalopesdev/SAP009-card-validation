@@ -42,7 +42,7 @@ Meu projeto se apresenta como uma ferramenta gratuita apenas para checagem de n�
 * Permitir apenas a inserção de números no campo que recebe o número do cartão
 * Alertar caso o número digitado tenha menos que 16 caracteres
 * Exibir máscara de entrada de dados
-* Acessibilidade no css. Redimensionamento de página
+* CSS orientado para responsividade
 
 ## 5. Definição do produto
 
