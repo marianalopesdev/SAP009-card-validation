@@ -25,7 +25,7 @@ export function validateCard(event) {
   if (cardNumber.length === 16) {
     const cardNumberArray = cardNumber.split("").map(Number);
     const reverseCardNumber = cardNumberArray.reverse();
-
+    
     const validateCardResult = validator.isValid(reverseCardNumber);
     const maskedNumber = validator.maskify(cardNumber);
 
