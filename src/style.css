@@ -37,6 +37,14 @@ header {
   height: 15vh;
 }
 
+h1 {
+  color: #076373;
+}
+
+h3 {
+  color: #0C9784;
+}
+
 .wrapper {
   height: 70vh;
   width: 70vw;
@@ -143,11 +151,12 @@ input[type="text"] {
 
 #isValidLabel {
   padding-top: 2rem;
+  font-weight: 500;
 }
 
 .valid {
   font-size: 2rem;
-  color: rgba(8, 202, 8, 0.742);
+  color: #0C9784;
 }
 
 .invalid {
@@ -163,7 +172,7 @@ input[type="text"] {
 input[type="submit"] {
   margin-left: 0.4rem;
   padding: 5px 15px;
-  background: rgb(79, 158, 241);
+  background: #9893da;
   border: 0 none;
   cursor: pointer;
   -webkit-border-radius: 5px;
