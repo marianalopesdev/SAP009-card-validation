@@ -173,7 +173,7 @@ input[type="submit"] {
   margin-left: 0.4rem;
   padding: 5px 15px;
   background: #9893da;
-  border: 0 none;
+  border: 1 none;
   cursor: pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
