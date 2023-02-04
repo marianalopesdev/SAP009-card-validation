@@ -116,21 +116,14 @@ h3 {
   font-size: 2rem;
 }
 
-.formCardNumber {
+form {
   margin-top: 4rem;
   display: flex;
   flex-direction: row;
   width: 50rem;
   justify-content: center;
   padding-bottom: 2rem;
-}
-
-.formCardNumber p {
   font-size: 2rem;
-}
-
-form {
-  display: flex;
 }
 
 input[type="text"] {
@@ -162,11 +155,7 @@ input[type="text"] {
 .invalid {
   color: #ce3d3de9;
 }
-/* 
- input[type=text]:focus {
-    border-color:rgb(237, 20, 20);
-     margin-left: 1rem; 
-}  */
+
 
 input[type="submit"] {
   margin-left: 0.4rem;

@@ -15,14 +15,14 @@
     <header>
       <h1>Card Validator</h1>
       <h3>Is your card valid? Check our free tool!</h3>
-    </header>---
+    </header>
     <main>
       <div class="wrapper">
         <div class="creditCard">
           <div class="creditCardText">
             <div class="bankName">Ursal | Bank</div>
             <div class="bankLogo">
-              <img src="./assets/mastercard_logo.png" />
+              <img src="./assets/mastercard_logo.png" alt="Mastecard logo" />
             </div>
           </div>
           <div class="userData">
@@ -34,9 +34,7 @@
               <div class="expirationDate">12/30</div>
             </div>
           </div>
-        </div>
-
-        <div class="formCardNumber">
+        </div>        
           <form>
             <p>Type the card number:</p>
             <input type="text" id="cardNumber" maxlength="16" placeholder="0000000000000000" />
@@ -45,9 +43,7 @@
               id="sendButton"
               value="Validate"             
             />
-            <!-- <label id="labelText"></label> -->
-          </form>
-        </div>
+           </form>        
         <div class="isValid">
           <label for="" id="maskedCardNumber" class="maskify"></label>
           

@@ -42,10 +42,12 @@ function validateCard(event) {
     cardNumberInput.value = "";   
   }   
   else if (cardNumber !== "") {
-    alert("Type a valid card number (16 digits)");
+    isValidLabel.classList.add("invalid");
+    isValidLabel.innerHTML = "Type a valid card number (16 digits)";
   }
   else {
-    alert("Type the card number");
+    isValidLabel.classList.add("invalid");
+    isValidLabel.innerHTML = "Type the card number";
   }
 }
 
