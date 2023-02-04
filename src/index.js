@@ -5,6 +5,8 @@ const isValidLabel = document.getElementById("isValidLabel");
 const cardNumberInput = document.getElementById("cardNumber");
 const button = document.getElementById("sendButton");
 const labelCardNumber = document.getElementById("label-card-number");
+const checkIcon = document.getElementById("check-icon");
+const errorIcon = document.getElementById("error-icon");
 
 input.addEventListener("keypress", handleKeyPressJustNumbers);
 button.addEventListener("click", validateCard);
@@ -35,9 +37,13 @@ function validateCard(event) {
     if (validateCardResult === true) {
       isValidLabel.classList.add("valid");
       isValidLabel.innerHTML = "VALID CARD";
+      errorIcon.classList.add("check-display");
+      checkIcon.classList.remove("check-display");
     } else {
       isValidLabel.classList.add("invalid");
       isValidLabel.innerHTML = "INVALID CARD";
+      checkIcon.classList.add("check-display");
+      errorIcon.classList.remove("check-display");
     } 
     cardNumberInput.value = "";   
   }   

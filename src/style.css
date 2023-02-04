@@ -144,10 +144,13 @@ input[type="text"] {
   color: #313e50;
 }
 
+.isValid {
+  
+}
 #isValidLabel {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-top: 2rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .valid {
@@ -157,6 +160,26 @@ input[type="text"] {
 .invalid {
   color: #ce3d3de9;
 }
+
+.check-icon{
+  width: 2rem;
+
+}
+
+.check-display {
+  display: none;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 
 
 input[type="submit"] {
