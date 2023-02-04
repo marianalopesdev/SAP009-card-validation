@@ -101,11 +101,13 @@ h3 {
 }
 
 .cardNumber {
+  display: flex;
   font-size: 2.4rem;
   font-weight: 500;
   width: 40rem;
   height: 4rem;
   align-self: start;
+
 }
 
 .nameDate {

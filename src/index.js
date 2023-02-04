@@ -2,9 +2,9 @@ import validator from "./validator.js";
 
 const input = document.getElementById("cardNumber");
 const isValidLabel = document.getElementById("isValidLabel");
-const maskedCardNumberLabel = document.getElementById("maskedCardNumber");
 const cardNumberInput = document.getElementById("cardNumber");
 const button = document.getElementById("sendButton");
+const labelCardNumber = document.getElementById("label-card-number");
 
 input.addEventListener("keypress", handleKeyPressJustNumbers);
 button.addEventListener("click", validateCard);
@@ -29,7 +29,7 @@ function validateCard(event) {
     const validateCardResult = validator.isValid(reverseCardNumber);
     const maskedNumber = validator.maskify(cardNumber);
 
-    maskedCardNumberLabel.innerHTML = maskedNumber;    
+    labelCardNumber.innerHTML = maskedNumber.substr(-4); 
     isValidLabel.classList.remove("valid","invalid");
     
     if (validateCardResult === true) {
