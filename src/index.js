@@ -17,7 +17,7 @@ function handleKeyPressJustNumbers(e) {
   }
 }
 
-export function validateCard(event) {
+function validateCard(event) {
   event.preventDefault();
   
   const cardNumber = cardNumberInput.value;

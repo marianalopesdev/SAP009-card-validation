@@ -16,11 +16,7 @@ const validator = {
         totalSum += parseInt(reverseCardNumber[i]);
       }
     }
-    if (totalSum % 10 === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return (totalSum % 10 === 0);
   },
 
   maskify: function maskify(cardNumber) {

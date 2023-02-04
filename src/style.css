@@ -150,17 +150,16 @@ input[type="text"] {
 }
 
 #isValidLabel {
+  font-size: 2rem;
   padding-top: 2rem;
   font-weight: 500;
 }
 
 .valid {
-  font-size: 2rem;
   color: #0C9784;
 }
 
 .invalid {
-  font-size: 2rem;
   color: #ce3d3de9;
 }
 /* 
